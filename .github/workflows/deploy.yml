@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code #gets pre build actions 
       uses: actions/checkout@v2
     - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-    - run: docker build -t mero/react-project:latest .
+    - run: docker build -f Dockerfile.dev -t mero/react-project:latest .
     - run: docker run -e CI=true mero/react-project:latest npm test
 
     
