@@ -1,0 +1,11 @@
+
+sudo: required 
+language: generic
+services:
+  - docker
+
+before_install:
+  - docker build -t mero/react-test -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true mero/react-test npm run test 
