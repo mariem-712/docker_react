@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage('build docker image'){
             steps{
-                sh 'docker build -t mero:docker-reco -f Dockerfile .'
+                sh 'docker build -t mero:docker-reco -f Dockerfile.dev .'
             }
         }
         stage('RUN TESTS'){
